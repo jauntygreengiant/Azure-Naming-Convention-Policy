@@ -1,14 +1,14 @@
 $ps = @(
     ### General
     @('mg','mg-*','Microsoft.Management/managementGroups'),
-    @('rg','rg-*','Microsoft.Resources/subscriptions/resourceGroups'),
+    @('rg','rg-cw-*','Microsoft.Resources/subscriptions/resourceGroups'),
     @('policy','policy-*','Microsoft.Authorization/policyDefinitions'),
     @('apim','apim-*','Microsoft.ApiManagement/service'),
     @('id','id-*','Microsoft.ManagedIdentity/userAssignedIdentities'),
 
     ### Networking
-    @('vnet','vnet-*','Microsoft.Network/virtualNetworks'),
-    @('snet','snet-*','Microsoft.Network/virtualNetworks/subnets'),
+    @('vnet','vnet-cw-*','Microsoft.Network/virtualNetworks'),
+    @('snet','snet-cw-*','Microsoft.Network/virtualNetworks/subnets'),
     @('peer','peer-*','Microsoft.Network/virtualNetworks/virtualNetworkPeerings'),
     @('nic','nic-*','Microsoft.Network/networkInterfaces'),
     @('pip','pip-*','Microsoft.Network/publicIPAddresses'),
@@ -30,9 +30,9 @@ $ps = @(
     @('waf','waf-*','Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies'),
 
     ### Compute and Web
-    @('vm','vm*','Microsoft.Compute/virtualMachines'),
-    @('vmss','vmss-*','Microsoft.Compute/virtualMachineScaleSets'),
-    @('avail','avail-*','Microsoft.Compute/availabilitySets'),
+    @('vm','vmcw*','Microsoft.Compute/virtualMachines'),
+    #@('vmss','vmss-*','Microsoft.Compute/virtualMachineScaleSets'),
+    @('availSets','as-cw-*','Microsoft.Compute/availabilitySets'),
     #@('osdisk','osdisk-*',''),
     #@('disk','disk-*',''),
     #@('stvm','stvm-*',''),
@@ -40,35 +40,38 @@ $ps = @(
     #@('arck','arck',''),
     #@('cr','cr',''),
     #@('ci','ci-*',''),
-    @('aks','aks-*','Microsoft.ContainerService/managedClusters'),
+    #@('aks','aks-*','Microsoft.ContainerService/managedClusters'),
     #@('sf','sf-*',''),
     #@('ase','ase-*',''),
     #@('stapp','stapp',''),
     #@('func','func-*','Microsoft.Web/sites'), kind: "functionapp"
     #@('cld','cld-*',''),
-    @('ntf','ntf-*','Microsoft.NotificationHubs/namespaces/notificationHubs'),
-    @('ntfns','ntfs-*','Microsoft.NotificationHubs/namespaces'),
+    #@('ntf','ntf-*','Microsoft.NotificationHubs/namespaces/notificationHubs'),
+    #@('ntfns','ntfs-*','Microsoft.NotificationHubs/namespaces'),
 
     # One-of templates not based on module
     #@('plan','plan-*','Microsoft.Web/serverfarms'),    
     #@('app','app-*','Microsoft.Web/sites'), 
 
     ### Databases 
-    @('sql','sql-*','Microsoft.Sql/servers'),
+    @('sqlSvr','sqlsvr*','Microsoft.Sql/servers'),
     @('sqldb','sqldb-*','Microsoft.Sql/servers/databases'),
-    @('cosmos','cosmos-*','Microsoft.DocumentDB/databaseAccounts'),
-    @('redis','redis-*','Microsoft.Cache/Redis'),
-    @('mysql','mysql-*','Microsoft.DBforMySQL/servers'),
-    @('psql','psql-*','Microsoft.DBforPostgreSQL/servers'),
+    #@('cosmos','cosmos-*','Microsoft.DocumentDB/databaseAccounts'),
+    #@('redis','redis-*','Microsoft.Cache/Redis'),
+    #@('mysql','mysql-*','Microsoft.DBforMySQL/servers'),
+    #@('psql','psql-*','Microsoft.DBforPostgreSQL/servers'),
     #@('sqldw','sqldw-*',''),
     #@('syn','syn-*',''),
     #@('sqlstrdb','sqlstrdb-*',''),
-    @('sqlmi','sqlmi-*','Microsoft.Sql/managedInstances'),
+    @('sqlmi','sqlmcw*','Microsoft.Sql/managedInstances'),
 
     ### Storage
-    @('st','st*','Microsoft.Storage/storageAccounts'),
+    @('st','stcw*','Microsoft.Storage/storageAccounts'),
+    @('afs', 'afs-*', 'Microsoft.Storage/storageAccounts/fileServices/shares'),
+    @('sss', 'sss-*', 'Microsoft.Storage/storageAccounts/blobServices/containers'),
+    @('sg', 'sg-*', 'Microsoft.Storage/storageAccounts/queueServices/queues'),
     #@('ssimp','ssimp*',''),
-    @('acr','acr*','Microsoft.ContainerRegistry/registries'),
+    #@('acr','acr*','Microsoft.ContainerRegistry/registries'),
 
     ### AI and Machine Learning
     #@('srch','srch-*',''),
@@ -83,10 +86,10 @@ $ps = @(
     #@('adf','adf-*',''),
     #@('dls','dls-*',''),
     #@('dla','dla*',''),
-    @('evhns','evhns-*','Microsoft.EventHub/namespaces'),
-    @('evh','evh-*','Microsoft.EventHub/namespaces/eventhubs'),
-    @('evgd','evgd-*','Microsoft.EventGrid/domains'),
-    @('evgt','evgt-*','Microsoft.EventGrid/topics'),
+    #@('evhns','evhns-*','Microsoft.EventHub/namespaces'),
+    #@('evh','evh-*','Microsoft.EventHub/namespaces/eventhubs'),
+    #@('evgd','evgd-*','Microsoft.EventGrid/domains'),
+    #@('evgt','evgt-*','Microsoft.EventGrid/topics'),
     #@('hadoop','hadoop-*',''),
     #@('hbase','hbase-*',''),
     #@('kafka','kafka-*',''),
@@ -98,15 +101,15 @@ $ps = @(
     #@('tsi','tsi-*',''),
 
     ### Developer tools
-    @('appcs','appcs-*','Microsoft.AppConfiguration/configurationStores'),
-    @('stap','stap-*','Microsoft.Web/staticSites'),
+    #@('appcs','appcs-*','Microsoft.AppConfiguration/configurationStores'),
+    #@('stap','stap-*','Microsoft.Web/staticSites'),
 
     ### Integration
-    @('ia','ia-*','Microsoft.Logic/integrationAccounts'),
-    @('logic','logic-*','Microsoft.Logic/workflows'),
-    @('sb','sb-*','Microsoft.ServiceBus/namespaces'),
-    @('sbq','sbq-*','Microsoft.ServiceBus/namespaces/queues'),
-    @('sbt','sbt-*','Microsoft.ServiceBus/namespaces/topics'),
+    #@('ia','ia-*','Microsoft.Logic/integrationAccounts'),
+    #@('logic','logic-*','Microsoft.Logic/workflows'),
+    #@('sb','sb-*','Microsoft.ServiceBus/namespaces'),
+    #@('sbq','sbq-*','Microsoft.ServiceBus/namespaces/queues'),
+    #@('sbt','sbt-*','Microsoft.ServiceBus/namespaces/topics'),
 
     ### Management and governance
     @('aa','aa-*','Microsoft.Automation/automationAccounts'),
