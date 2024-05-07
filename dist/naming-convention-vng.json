@@ -5,14 +5,14 @@
     "_generator": {
       "name": "bicep",
       "version": "0.26.54.24096",
-      "templateHash": "17181395813435763774"
+      "templateHash": "4894245478767294687"
     }
   },
   "resources": [
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "policy-naming-convention-apim",
+      "name": "policy-naming-convention-vng",
       "location": "[deployment().location]",
       "properties": {
         "expressionEvaluationOptions": {
@@ -21,16 +21,16 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "apim-*"
+            "value": "vng-cw-*"
           },
           "policyName": {
-            "value": "policy-naming-convention-apim"
+            "value": "policy-naming-convention-vng"
           },
           "assignmentName": {
-            "value": "assignment-naming-convention-apim"
+            "value": "assignment-naming-convention-vng"
           },
           "type": {
-            "value": "Microsoft.ApiManagement/service"
+            "value": "Microsoft.Network/virtualNetworkGateways"
           }
         },
         "template": {

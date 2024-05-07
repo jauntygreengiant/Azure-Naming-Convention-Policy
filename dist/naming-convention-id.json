@@ -4,15 +4,14 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.4.613.9944",
-      "templateHash": "9482149916672506240"
+      "version": "0.26.54.24096",
+      "templateHash": "10848997071644978948"
     }
   },
-  "functions": [],
   "resources": [
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-10-01",
+      "apiVersion": "2022-09-01",
       "name": "policy-naming-convention-id",
       "location": "[deployment().location]",
       "properties": {
@@ -40,8 +39,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.4.613.9944",
-              "templateHash": "1962347804019361325"
+              "version": "0.26.54.24096",
+              "templateHash": "8931299258495444828"
             }
           },
           "parameters": {
@@ -60,28 +59,27 @@
             "effect": {
               "type": "string",
               "defaultValue": "Deny",
-              "metadata": {
-                "description": "The effect determines what happens when the policy rule is evaluated to match"
-              },
               "allowedValues": [
                 "Deny",
                 "Audit",
                 "Disabled"
-              ]
+              ],
+              "metadata": {
+                "description": "The effect determines what happens when the policy rule is evaluated to match"
+              }
             },
             "enforcementMode": {
               "type": "string",
               "defaultValue": "Default",
-              "metadata": {
-                "description": "When enforcement mode is disabled, the policy effect isn't enforced (i.e. deny policy won't deny resources). Compliance assessment results are still available."
-              },
               "allowedValues": [
                 "Default",
                 "DoNotEnforce"
-              ]
+              ],
+              "metadata": {
+                "description": "When enforcement mode is disabled, the policy effect isn't enforced (i.e. deny policy won't deny resources). Compliance assessment results are still available."
+              }
             }
           },
-          "functions": [],
           "resources": [
             {
               "type": "Microsoft.Authorization/policyDefinitions",

@@ -127,7 +127,7 @@ $ps = @(
     ### Desktop Virtualization
     @('ag','ag-cw-avd-*','Microsoft.DesktopVirtualization/applicationGroups'),
     @('ws','ws-cw-avd-*','Microsoft.DesktopVirtualization/workspaces'),
-    @('hs','hs-cw-avd-*','Microsoft.DesktopVirtualization/hostPools'),
+    @('hs','hs-cw-avd-*','Microsoft.DesktopVirtualization/hostPools')
     
     # One-off template not based on module
     #@('log','log-*','Microsoft.OperationalInsights/workspaces'),
