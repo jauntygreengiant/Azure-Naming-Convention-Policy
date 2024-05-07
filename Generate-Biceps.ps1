@@ -147,5 +147,5 @@ foreach ($p in $ps)
     $output = Join-Path -Path ".\bicep" -ChildPath "naming-convention-${token}.bicep"
     (Get-Content -path .\template\naming-convention-template.bicep) -replace "#1#",$p[0] -replace "#2#",$p[1] -replace "#3#",$p[2] | out-file -Path $output
 
-    "[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmatthiasguentert%2Fazure-naming-convention-initiative%2Fmg_arm_templates%2Fdist%2Fnaming-convention-${token}.json)" | Out-File -Append -FilePath $(Join-Path -Path ".\dist" -ChildPath "links.txt")
+    "[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjauntygreengiant%2FAzure-Naming-Convention-Policy%2Fmain%2Fdist%2Fnaming-convention-${token}.json)" | Out-File -Append -FilePath $(Join-Path -Path ".\dist" -ChildPath "links.txt")
 }
