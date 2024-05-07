@@ -21,7 +21,7 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "*-nic*"
+            "value": "*-nic"
           },
           "policyName": {
             "value": "policy-naming-convention-nic"

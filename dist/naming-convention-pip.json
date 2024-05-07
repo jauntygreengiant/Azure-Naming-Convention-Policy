@@ -21,7 +21,7 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "*-pip*"
+            "value": "*-pip"
           },
           "policyName": {
             "value": "policy-naming-convention-pip"
