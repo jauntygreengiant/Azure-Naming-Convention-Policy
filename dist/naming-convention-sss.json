@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.26.54.24096",
-      "templateHash": "913511465223763730"
+      "templateHash": "18082823327396537181"
     }
   },
   "resources": [
@@ -21,7 +21,7 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "sss-cw-*"
+            "value": "sss-gv-*"
           },
           "policyName": {
             "value": "policy-naming-convention-sss"

@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.26.54.24096",
-      "templateHash": "698556893228874100"
+      "templateHash": "5156835386546638377"
     }
   },
   "resources": [
@@ -21,7 +21,7 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "sqlmcw*"
+            "value": "sqlmgv*"
           },
           "policyName": {
             "value": "policy-naming-convention-sqlmi"

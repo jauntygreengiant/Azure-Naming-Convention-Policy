@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.26.54.24096",
-      "templateHash": "6631634244065287868"
+      "templateHash": "13219167130845775640"
     }
   },
   "resources": [
@@ -21,7 +21,7 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "sqlsvrcw*"
+            "value": "sqlsvrgv*"
           },
           "policyName": {
             "value": "policy-naming-convention-sqlSvr"

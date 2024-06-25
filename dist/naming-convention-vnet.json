@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.26.54.24096",
-      "templateHash": "11567180158143805737"
+      "templateHash": "11696603659954868977"
     }
   },
   "resources": [
@@ -21,7 +21,7 @@
         "mode": "Incremental",
         "parameters": {
           "pattern": {
-            "value": "vnet-cw-*"
+            "value": "vnet-gv-*"
           },
           "policyName": {
             "value": "policy-naming-convention-vnet"
