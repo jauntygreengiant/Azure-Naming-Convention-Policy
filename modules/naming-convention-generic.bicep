@@ -10,7 +10,7 @@ param type string
   'Disabled'
 ])
 @description('The effect determines what happens when the policy rule is evaluated to match')
-param effect string = 'Deny'
+param effect string = 'Audit'
 
 @allowed([
   'Default'
