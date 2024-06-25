@@ -1,5 +1,5 @@
 Management Goups:
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjauntygreengiant%2FAzure-Naming-Convention-Policy%2Fmain%2Fdist%2Fnaming-convention-mg.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjauntygreengiant%2FAzure-Naming-Convention-Policy%2Fmain%2Fdist%2Fnaming-convention-mg.json)
 
 Resource Groups
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjauntygreengiant%2FAzure-Naming-Convention-Policy%2Fmain%2Fdist%2Fnaming-convention-rg.json)
