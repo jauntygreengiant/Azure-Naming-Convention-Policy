@@ -1,28 +1,28 @@
 $ps = @(
     ### General
-    @('mg','mg-cw-*','Microsoft.Management/managementGroups'),
-    @('rg','rg-cw-*','Microsoft.Resources/subscriptions/resourceGroups'),
+    @('mg','mg-gv-*','Microsoft.Management/managementGroups'),
+    @('rg','rg-gv-*','Microsoft.Resources/subscriptions/resourceGroups'),
     @('policy','policy-*','Microsoft.Authorization/policyDefinitions'),
     @('apim','apim-*','Microsoft.ApiManagement/service'),
     @('id','id-*','Microsoft.ManagedIdentity/userAssignedIdentities'),
 
     ### Networking
-    @('vnet','vnet-cw-*','Microsoft.Network/virtualNetworks'),
-    @('snet','snet-cw-*','Microsoft.Network/virtualNetworks/subnets'),
+    @('vnet','vnet-gv-*','Microsoft.Network/virtualNetworks'),
+    @('snet','snet-gv-*','Microsoft.Network/virtualNetworks/subnets'),
     # @('peer','peer-*','Microsoft.Network/virtualNetworks/virtualNetworkPeerings'),
     @('nic','*-nic','Microsoft.Network/networkInterfaces'),
     @('pip','*-pip','Microsoft.Network/publicIPAddresses'),
-    @('lb','lb-cw-*','Microsoft.Network/loadBalancers'),
+    @('lb','lb-gv-*','Microsoft.Network/loadBalancers'),
     #@('lbe','lbe-*','Microsoft.Network/loadBalancers'),
     #@('nsg','nsg-*','Microsoft.Network/networkSecurityGroups'),
     #@('asg','asg-*','Microsoft.Network/applicationSecurityGroups'),
-    @('lng','lng-cw-*','Microsoft.Network/localNetworkGateways'),
-    @('vng','vng-cw-*','Microsoft.Network/virtualNetworkGateways'),
+    @('lng','lng-gv-*','Microsoft.Network/localNetworkGateways'),
+    @('vng','vng-gv-*','Microsoft.Network/virtualNetworkGateways'),
     # @('cn','cn-*','Microsoft.Network/vpnGateways/vpnConnections'),
     @('erc','erc-*','Microsoft.Network/expressRouteCircuits'),
     #@('agw', 'agw-*', 'Microsoft.Network/applicationGateways'),
     @('route', 'route-*', 'Microsoft.Network/routeTables'),
-    @('udr','udr-cw-*','Microsoft.Network/routeTables/routes'),
+    @('udr','udr-gv-*','Microsoft.Network/routeTables/routes'),
     # @('traf','traf-*','Microsoft.Network/trafficmanagerprofiles'),
     # @('fd','fd-*','Microsoft.Network/frontDoors'),
     # @('cdnp','cdnp-*','Microsoft.Cdn/profiles'),
@@ -30,9 +30,9 @@ $ps = @(
     # @('waf','waf-*','Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies'),
 
     ### Compute and Web
-    @('vm','vmcw*','Microsoft.Compute/virtualMachines'),
+    @('vm','azgv*','Microsoft.Compute/virtualMachines'),
     #@('vmss','vmss-*','Microsoft.Compute/virtualMachineScaleSets'),
-    @('availSets','as-cw-*','Microsoft.Compute/availabilitySets'),
+    @('availSets','as-gv-*','Microsoft.Compute/availabilitySets'),
     #@('osdisk','osdisk-*',''),
     #@('disk','disk-*',''),
     #@('stvm','stvm-*',''),
@@ -54,11 +54,11 @@ $ps = @(
     #@('app','app-*','Microsoft.Web/sites'), 
 
     ### Azure Load Testing
-    @('ldt','ldt-cw-*','Microsoft.LoadTessService/loadTests'),
+    @('ldt','ldt-gv-*','Microsoft.LoadTessService/loadTests'),
 
     ### Databases 
-    @('sqlSvr','sqlsvrcw*','Microsoft.Sql/servers'),
-    @('sqldb','sqldb-cw-*','Microsoft.Sql/servers/databases'),
+    @('sqlSvr','sqlsvrgv*','Microsoft.Sql/servers'),
+    @('sqldb','sqldb-gv-*','Microsoft.Sql/servers/databases'),
     #@('cosmos','cosmos-*','Microsoft.DocumentDB/databaseAccounts'),
     #@('redis','redis-*','Microsoft.Cache/Redis'),
     #@('mysql','mysql-*','Microsoft.DBforMySQL/servers'),
@@ -66,12 +66,12 @@ $ps = @(
     #@('sqldw','sqldw-*',''),
     #@('syn','syn-*',''),
     #@('sqlstrdb','sqlstrdb-*',''),
-    @('sqlmi','sqlmcw*','Microsoft.Sql/managedInstances'),
+    @('sqlmi','sqlmgv*','Microsoft.Sql/managedInstances'),
 
     ### Storage
-    @('st','stcw*','Microsoft.Storage/storageAccounts'),
-    @('afs', 'afs-cw-*', 'Microsoft.Storage/storageAccounts/fileServices/shares'),
-    @('sss', 'sss-cw-*', 'Microsoft.Storage/storageAccounts/blobServices/containers'),
+    @('st','stgv*','Microsoft.Storage/storageAccounts'),
+    @('afs', 'afs-gv-*', 'Microsoft.Storage/storageAccounts/fileServices/shares'),
+    @('sss', 'sss-gv-*', 'Microsoft.Storage/storageAccounts/blobServices/containers'),
     @('sg', 'sg-*', 'Microsoft.Storage/storageAccounts/queueServices/queues'),
     #@('ssimp','ssimp*',''),
     #@('acr','acr*','Microsoft.ContainerRegistry/registries'),
@@ -122,12 +122,12 @@ $ps = @(
     # @('kv','kv-*','Microsoft.KeyVault/vaults'),
 
     ### Automation
-    @('aa','aa-cw-*','Microsoft.Automation/automationAccounts'),
+    @('aa','aa-gv-*','Microsoft.Automation/automationAccounts'),
 
     ### Desktop Virtualization
-    @('ag','ag-cw-avd-*','Microsoft.DesktopVirtualization/applicationGroups'),
-    @('ws','ws-cw-avd-*','Microsoft.DesktopVirtualization/workspaces'),
-    @('hs','hs-cw-avd-*','Microsoft.DesktopVirtualization/hostPools')
+    @('ag','ag-gv-avd-*','Microsoft.DesktopVirtualization/applicationGroups'),
+    @('ws','ws-gv-avd-*','Microsoft.DesktopVirtualization/workspaces'),
+    @('hs','hs-gv-avd-*','Microsoft.DesktopVirtualization/hostPools')
     
     # One-off template not based on module
     #@('log','log-*','Microsoft.OperationalInsights/workspaces'),

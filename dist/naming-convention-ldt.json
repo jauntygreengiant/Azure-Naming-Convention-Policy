@@ -1,0 +1,127 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.26.54.24096",
+      "templateHash": "162655244440021566"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "policy-naming-convention-ldt",
+      "location": "[deployment().location]",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "pattern": {
+            "value": "ldt-cw-*"
+          },
+          "policyName": {
+            "value": "policy-naming-convention-ldt"
+          },
+          "assignmentName": {
+            "value": "assignment-naming-convention-ldt"
+          },
+          "type": {
+            "value": "Microsoft.LoadTessService/loadTests"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.26.54.24096",
+              "templateHash": "14555149974378948027"
+            }
+          },
+          "parameters": {
+            "pattern": {
+              "type": "string"
+            },
+            "policyName": {
+              "type": "string"
+            },
+            "assignmentName": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "effect": {
+              "type": "string",
+              "defaultValue": "Audit",
+              "allowedValues": [
+                "Deny",
+                "Audit",
+                "Disabled"
+              ],
+              "metadata": {
+                "description": "The effect determines what happens when the policy rule is evaluated to match"
+              }
+            },
+            "enforcementMode": {
+              "type": "string",
+              "defaultValue": "Default",
+              "allowedValues": [
+                "Default",
+                "DoNotEnforce"
+              ],
+              "metadata": {
+                "description": "When enforcement mode is disabled, the policy effect isn't enforced (i.e. deny policy won't deny resources). Compliance assessment results are still available."
+              }
+            }
+          },
+          "resources": [
+            {
+              "type": "Microsoft.Authorization/policyDefinitions",
+              "apiVersion": "2020-03-01",
+              "name": "[parameters('policyName')]",
+              "properties": {
+                "policyType": "Custom",
+                "mode": "All",
+                "policyRule": {
+                  "if": {
+                    "allOf": [
+                      {
+                        "field": "type",
+                        "equals": "[parameters('type')]"
+                      },
+                      {
+                        "field": "name",
+                        "notLike": "[parameters('pattern')]"
+                      }
+                    ]
+                  },
+                  "then": {
+                    "effect": "[parameters('effect')]"
+                  }
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Authorization/policyAssignments",
+              "apiVersion": "2020-03-01",
+              "name": "[parameters('assignmentName')]",
+              "properties": {
+                "policyDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/policyDefinitions', parameters('policyName'))]",
+                "enforcementMode": "[parameters('enforcementMode')]"
+              },
+              "dependsOn": [
+                "[subscriptionResourceId('Microsoft.Authorization/policyDefinitions', parameters('policyName'))]"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
